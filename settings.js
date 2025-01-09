@@ -14,7 +14,7 @@ const profileSettings = {
   location: "Pekanbaru, Riau, Indonesia", // Lokasi
   backgroundImage: "media/background.jpg", // Latar belakang halaman
   links: [
-    { title: "GitHub", url: "https://github.com/VynaaValerie", icon: "fa-github" }, // Tautan GitHub
+    { title: "Produk Legislasi KM UNP", url: "https://github.com/VynaaValerie", icon: "fa-github" }, 
     { title: "LinkedIn", url: "https://www.linkedin.com/in/vynaaval", icon: "fa-linkedin" }, // Tautan LinkedIn
     { title: "Twitter", url: "https://twitter.com/vynaaval", icon: "fa-twitter" }, // Tautan Twitter
     { title: "Instagram", url: "https://www.instagram.com/vynaa_valerie", icon: "fa-instagram" }, // Tautan Instagram
