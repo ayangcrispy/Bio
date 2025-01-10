@@ -1,0 +1,179 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Outfit, sans-serif;
+  color: #e1e1f1;
+}
+
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: #191931;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.profile {
+  width: 9.635rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+}
+
+.sosmed {
+  font-size: 1.5rem;
+  color: #797995;
+}
+
+.sosmed i {
+  cursor: pointer;
+}
+
+.sosmed i:hover {
+  color: white;
+}
+
+.sosmed .sosmed-link:not(:last-child) {
+  margin-right: 1rem;
+}
+
+ul {
+  width: 80%;
+  max-width: 40rem;
+}
+
+li {
+  list-style: none;
+}
+
+li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.links {
+  margin-top: 1.5rem;
+}
+
+.link-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #2d2d56;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.75rem 0 #0f0f25;
+  border: 2px solid #2d2d56;
+}
+
+.link-card:hover {
+  border: 2px solid white;
+}
+
+.link-icon {
+  background-image: linear-gradient(to top, purple, cyan);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.link-text {
+  text-align: center;
+}
+
+.link-action i {
+  color: #797995;
+}
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  position: relative;
+  font-size: 0.75rem;
+  color: #797995;
+}
+
+.copyright img {
+  width: 2rem;
+  opacity: 0.25;
+}
+
+.toast-container {
+  position: fixed;
+  top: 0;
+}
+
+.toast {
+  background-color: white;
+  color: #191931;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border-radius: 0.75rem;
+  animation: muncul 300ms ease-in-out;
+}
+
+.toast-gone {
+  animation: menghilang 1s ease-in-out;
+  animation-delay: 2s;
+}
+
+@keyframes menghilang {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes muncul {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bg-text {
+  position: absolute;
+  user-select: none;
+  top: 8rem;
+  /* left: 20rem; */
+  text-transform: uppercase;
+  font-size: 12rem;
+  font-weight: 900;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-text-stroke: 2px #2d2d56;
+  -webkit-text-fill-color: transparent;
+  z-index: -1;
+}
