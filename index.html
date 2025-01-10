@@ -1,5 +1,272 @@
-<script>
-<!--
-document.write(unescape("%3C%21DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22en%22%3E%0A%3Chead%3E%0A%20%20%3Cmeta%20charset%3D%22utf-8%22%20/%3E%0A%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2C%20initial-scale%3D1.0%22%20/%3E%0A%20%20%3Cmeta%20http-equiv%3D%22X-UA-Compatible%22%20content%3D%22ie%3Dedge%22%20/%3E%0A%20%20%3Clink%20id%3D%22favicon%22%20rel%3D%22icon%22%20type%3D%22image/x-icon%22%20href%3D%22%22%3E%0A%20%20%3Ctitle%20id%3D%22title%22%3E%3C/title%3E%0A%20%20%3Cmeta%20id%3D%22meta-title%22%20name%3D%22title%22%20content%3D%22%22%3E%0A%20%20%3Cmeta%20id%3D%22meta-description%22%20name%3D%22description%22%20content%3D%22%22%3E%0A%20%20%3Cmeta%20id%3D%22meta-keywords%22%20name%3D%22keywords%22%20content%3D%22%22%3E%0A%20%20%3Cmeta%20id%3D%22meta-robots%22%20name%3D%22robots%22%20content%3D%22index%2C%20follow%22%3E%0A%20%20%3Cmeta%20http-equiv%3D%22Content-Type%22%20content%3D%22text/html%3B%20charset%3Dutf-8%22%3E%0A%20%20%3Cmeta%20name%3D%22language%22%20content%3D%22English%22%3E%0A%20%20%3Cmeta%20name%3D%22author%22%20content%3D%22%22%3E%0A%0A%20%20%3Cscript%20src%3D%22https%3A//kit.fontawesome.com/6fab3a0556.js%22%20crossorigin%3D%22anonymous%22%3E%3C/script%3E%0A%20%20%3Cscript%20src%3D%22https%3A//cdn.rawgit.com/bungfrangki/efeksalju/2a7805c7/efek-salju.js%22%20type%3D%22text/javascript%22%3E%3C/script%3E%0A%20%20%3Clink%20href%3D%22https%3A//cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css%22%20rel%3D%22stylesheet%22%20integrity%3D%22sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD%22%20crossorigin%3D%22anonymous%22%3E%0A%20%20%3Cscript%20src%3D%22https%3A//cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js%22%20integrity%3D%22sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN%22%20crossorigin%3D%22anonymous%22%3E%3C/script%3E%0A%20%20%3Cstyle%3E%0A%20%20%20%20%3Aroot%20%7B%0A%20%20%20%20%20%20font-size%3A%2062.5%25%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20*%20%7B%0A%20%20%20%20%20%20box-sizing%3A%20border-box%3B%0A%20%20%20%20%20%20margin%3A%200%3B%0A%20%20%20%20%20%20padding%3A%200%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20body%20%7B%0A%20%20%20%20%20%20background-image%3A%20url%28%22%22%29%3B%0A%20%20%20%20%20%20background-repeat%3A%20no-repeat%3B%0A%20%20%20%20%20%20background-size%3A%20cover%3B%0A%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20main%20%7B%0A%20%20%20%20%20%20height%3A%20100vh%3B%0A%20%20%20%20%20%20position%3A%20relative%3B%0A%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20align-items%3A%20center%3B%0A%20%20%20%20%20%20justify-content%3A%20center%3B%0A%20%20%20%20%20%20flex-direction%3A%20column%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.container%20%7B%0A%20%20%20%20%20%20width%3A%2028rem%3B%0A%20%20%20%20%20%20padding%3A%201rem%202rem%3B%0A%20%20%20%20%20%20background-color%3A%20rgba%28255%2C%20255%2C%20255%2C%200.45%29%3B%0A%20%20%20%20%20%20border-radius%3A%202rem%3B%0A%20%20%20%20%20%20border%3A%200.1rem%20solid%20rgba%28255%2C%20255%2C%20255%2C%200.25%29%3B%0A%20%20%20%20%20%20box-shadow%3A%200%200%201rem%200.1rem%20rgba%280%2C%200%2C%200%2C%200.25%29%3B%0A%20%20%20%20%20%20backdrop-filter%3A%20blur%281.5rem%29%3B%0A%20%20%20%20%20%20min-width%3A%2025rem%3B%0A%20%20%20%20%20%20box-shadow%3A%20rgb%2837%2039%2089%20/%208%25%29%200px%208px%208px%200%3B%0A%20%20%20%20%20%20position%3A%20relative%3B%0A%20%20%20%20%20%20z-index%3A%201%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.image%20%7B%0A%20%20%20%20%20%20width%3A%2040%25%3B%0A%20%20%20%20%20%20height%3A%20auto%3B%0A%20%20%20%20%20%20border-radius%3A%205rem%3B%0A%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20margin%3A%201rem%20auto%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20hr%20%7B%0A%20%20%20%20%20%20border-color%3A%20%23673146%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20h1%2C%0A%20%20%20%20.occupation%20%7B%0A%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20h1%20%7B%0A%20%20%20%20%20%20font-family%3A%20Muli%2C%20sans-serif%3B%0A%20%20%20%20%20%20font-weight%3A%20700%3B%0A%20%20%20%20%20%20font-size%3A%202.3rem%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.occupation%20%7B%0A%20%20%20%20%20%20margin-bottom%3A%200.5rem%3B%0A%20%20%20%20%20%20font-size%3A%201.5rem%3B%0A%20%20%20%20%20%20font-family%3A%20%22Space%20Mono%22%2C%20monospace%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.link-boxes%20%7B%0A%20%20%20%20%20%20margin%3A%202rem%201rem%3B%0A%20%20%20%20%20%20font-family%3A%20Muli%2C%20sans-serif%3B%0A%20%20%20%20%20%20font-weight%3A%20700%3B%0A%20%20%20%20%20%20font-size%3A%201.4em%3B%0A%20%20%20%20%20%20text-transform%3A%20capitalize%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.link-boxes%20a%20%7B%0A%20%20%20%20%20%20text-decoration%3A%20none%3B%0A%20%20%20%20%20%20display%3A%20block%3B%0A%20%20%20%20%20%20color%3A%20%2327213b%3B%0A%20%20%20%20%20%20border%3A%200.1rem%20solid%20%23673146%3B%0A%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%20%20margin%3A%200.7rem%3B%0A%20%20%20%20%20%20border-radius%3A%200.5rem%3B%0A%20%20%20%20%20%20padding%3A%200.3rem%3B%0A%20%20%20%20%20%20transition%3A%20all%20200ms%20ease-in-out%3B%0A%20%20%20%20%20%20box-shadow%3A%20rgb%2837%2039%2089%20/%208%25%29%200px%208px%208px%200%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.link-boxes%20a%3Ahover%20%7B%0A%20%20%20%20%20%20border%3A%200.1rem%20solid%20%2327213b%3B%0A%20%20%20%20%20%20background-color%3A%20%23f8923b%3B%0A%20%20%20%20%20%20cursor%3A%20pointer%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.location%20%7B%0A%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%20%20margin%3A%200.7rem%3B%0A%20%20%20%20%20%20font-size%3A%201.2rem%3B%0A%20%20%20%20%20%20font-family%3A%20%22Space%20Mono%22%2C%20monospace%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%23effetsalju%20%7B%0A%20%20%20%20%20%20position%3A%20fixed%3B%0A%20%20%20%20%20%20top%3A%200%3B%0A%20%20%20%20%20%20left%3A%200%3B%0A%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20height%3A%20100%25%3B%0A%20%20%20%20%20%20pointer-events%3A%20none%3B%0A%20%20%20%20%20%20z-index%3A%200%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20@media%20only%20screen%20and%20%28min-width%3A%20992px%29%20%7B%0A%20%20%20%20%20%20.image%20%7B%0A%20%20%20%20%20%20%20%20width%3A%2040%25%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20h1%20%7B%0A%20%20%20%20%20%20%20%20font-size%3A%202.4rem%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20.credits%20%7B%0A%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20%20%20bottom%3A%2010px%3B%0A%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20font-family%3A%20%22Space%20Mono%22%2C%20monospace%3B%0A%20%20%20%20%20%20font-size%3A%201rem%3B%0A%20%20%20%20%7D%0A%20%20%3C/style%3E%0A%3C/head%3E%0A%3Cbody%3E%0A%20%20%3Cdiv%20id%3D%22effetsalju%22%3E%3C/div%3E%0A%20%20%3Cmain%3E%0A%20%20%20%20%3Cdiv%20class%3D%22container%20shadow%22%3E%0A%20%20%20%20%20%20%3Cimg%20id%3D%22profile-image%22%20class%3D%22image%22%20src%3D%22%22%20alt%3D%22Profile%20Picture%22%20loading%3D%22lazy%22%3E%0A%20%20%20%20%20%20%3Ch1%20id%3D%22profile-name%22%3E%3C/h1%3E%0A%20%20%20%20%20%20%3Cp%20class%3D%22occupation%22%20id%3D%22occupation-text%22%3E%3C/p%3E%0A%20%20%20%20%20%20%3Chr/%3E%0A%20%20%20%20%20%20%3Cdiv%20class%3D%22link-boxes%22%20id%3D%22link-boxes%22%3E%0A%20%20%20%20%20%20%20%20%3C%21--%20Links%20will%20be%20injected%20here%20by%20JavaScript%20--%3E%0A%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%3Chr/%3E%0A%20%20%20%20%20%20%3Cp%20class%3D%22location%22%20id%3D%22location%22%3E%3C/p%3E%0A%20%20%20%20%3C/div%3E%0A%20%20%20%20%3Cdiv%20class%3D%22credits%22%3E%A9%20Recode%20by%20Vynaa%20Valerie%3C/div%3E%0A%20%20%3C/main%3E%0A%20%20%3Cscript%20type%3D%22module%22%20src%3D%22settings.js%22%3E%3C/script%3E%0A%3C/body%3E%0A%3C/html%3E%0A"));
-//-->
-</script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arif Fikri</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <!-- Background Text -->
+    <span class="bg-text">extrapora</span>
+
+    <!-- Foto Profile -->
+    <img class="profile" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5U1QXf7ufRurTPBNxkgvMUEIGpFZ4m_28dFGLtVruuevMPXEI2h2fTbL1W_SrQls7nzgDhMNlRtZcYYrCZyEq_M_sKO3mV1mSGkNJ40iBDxkzsmZDnatDArson9fMDXh2oRsn3aPJRWgjdPFnB5F6gZyKbscgOkdKHumh_GTqcXmivkoUP8xPauTbtaN9/s400/Picsart_24-09-25_21-19-06-820.png" alt="">
+    <h1 class="my-name">PARLEMEN EXTRAPORA</h1>
+    <p>MPM KM UNP 3.4</p>
+    
+    
+    
+    
+    
+    <div class="sosmed">	
+        
+        <a class="sosmed-link" href="https://instagram.com/mpmkmunp" target="_blank">
+            <i class="ph ph-instagram-logo"></i>
+        </a>
+        
+        <a class="sosmed-link" href="https://youtube.com/@MPMKMUNP" target="_blank">
+            <i class="ph ph-youtube-logo"></i>
+        </a>
+        
+        
+        
+        
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <ul class="links">
+    	
+    
+    
+    <li>
+    <a href="#judul" class="link-card" onclick="document.querySelector('#judul').scrollIntoView({ behavior: 'smooth' }); return false;">
+        <div class="link-icon">
+            <i class="ph-fill ph-U"></i>
+        </div>
+        <p class="link-text">Produk Legislasi KM UNP</p>
+        <div class="link-action">
+            <i class="ph-fill ph-copy"></i>
+        </div>
+    </a>
+</li>
+        
+        <li>
+            <a href="https://bit.ly/Aspirasi_kmunp" target="_blank" class="link-card">
+                <div class="link-icon">
+                    <i class="ph-fill ph-u"></i>
+                </div>
+                <p class="link-text">Form Aspirasi KM UNP</p>
+                <div class="link-action">
+                    <i class="ph-fill ph-copy"></i>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="https://bit.ly/DaftarPengunjungMPMKMUNP" target="_blank" class="link-card">
+                <div class="link-icon">
+                    <i class="ph-fill ph-U"></i>
+                </div>
+                <p class="link-text">Daftar Pengunjung MPM KM UNP</p>
+                <div class="link-action">
+                    <i class="ph-fill ph-copy"></i>
+                </div>
+            </a>
+        </li>
+        
+        
+        
+        
+
+        
+        <li>
+            <a href="https://linktr.ee/UNPLegislatifFair2024" target="_blank" class="link-card">
+                <div class="link-icon">
+                    <i class="ph-fill ph-U"></i>
+                </div>
+                <p class="link-text">Pendaftaran UNP Legislatif Fair 2024</p>
+                <div class="link-action">
+                    <i class="ph-fill ph-copy"></i>
+                </div>
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li>
+            <a href="https://docs.google.com/forms/d/1DDcGcLyMGTCmfz6g25Ko8RYl1NKRbD8GBpBAofo247o/viewform?edit_requested=true" target=" target="_blank" class="link-card">
+                <div class="link-icon">
+                    <i class="ph-fill ph-U"></i>
+                </div>
+                <p class="link-text">Pendaftaran SLM MPM KM UNP 2024</p>
+                <div class="link-action">
+                    <i class="ph-fill ph-copy"></i>
+                </div>
+            </a>
+        </li>
+        
+        
+        
+        <li>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQXF2rAXGxujN0q8thJeSgsf9p4nZtA-ZDcN0XbDqHMaQggQ/viewform" target=" target="_blank" class="link-card">
+                <div class="link-icon">
+                    <i class="ph-fill ph-U"></i>
+                </div>
+                <p class="link-text">Uji Publik UUD KM UNP</p>
+                <div class="link-action">
+                    <i class="ph-fill ph-copy"></i>
+                </div>
+            </a>
+        </li>
+        
+        
+        
+        
+        <li>
+            <a href="https://teknik-sidang.blogspot.com/" target=" target="_blank" class="link-card">
+                <div class="link-icon">
+                    <i class="ph-fill ph-U"></i>
+                </div>
+                <p class="link-text">Buku Panduan Umum Teknik Sidang KM UNP</p>
+                <div class="link-action">
+                    <i class="ph-fill ph-copy"></i>
+                </div>
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://wa.me/6282398801588?text=Silahkan%20isi%20data%20dibawah%20ini%0A%0ANama%20:%0AOrganisasi%20(jika%20ada)%20:%0AAsal%20Universitas%20:%0APesan:%0A%0A" target=" target="_blank" class="link-card">
+                <div class="link-icon">
+                    <i class="ph-fill ph-U"></i>
+                </div>
+                <p class="link-text">Contact Person</p>
+                <div class="link-action">
+                    <i class="ph-fill ph-copy"></i>
+                </div>
+            </a>
+        </li>
+        <br />
+        <br />
+                <br />
+        <br />
+        
+                <h2 class="my-name" 
+id="judul"
+style="text-align: center;">Produk Legislas KM UNP</h2>
+<br />
+<br />
+        
+     <li>
+            <a href="https://uud-km-unp.blogspot.com/" target=" target="_blank" class="link-card">
+                <div class="link-icon">
+                    <i class="ph-fill ph-U"></i>
+                </div>
+                <p class="link-text">UUD KM UNP</p>
+                <div class="link-action">
+                    <i class="ph-fill ph-copy"></i>
+                </div>
+            </a>
+        </li>  
+
+
+
+<li>
+            <a href="https://uu-no-1-tahun-2024-tentang-mpm-km-unp.blogspot.com" target=" target="_blank" class="link-card">
+                <div class="link-icon">
+                    <i class="ph-fill ph-U"></i>
+                </div>
+                <p class="link-text">UU No. 1 Tahun 2023 tentang MPM KM UNP</p>
+                <div class="link-action">
+                    <i class="ph-fill ph-copy"></i>
+                </div>
+            </a>
+        </li>
+
+<li>
+            <a href="https://uu-no2-th2024-ttg-pemilu-bem-km-unp.blogspot.com" target=" target="_blank" class="link-card">
+                <div class="link-icon">
+                    <i class="ph-fill ph-U"></i>
+                </div>
+                <p class="link-text">UU No. 2 Tahun 2023 tentang Pemilu BEM  KM UNP</p>
+                <div class="link-action">
+                    <i class="ph-fill ph-copy"></i>
+                </div>
+            </a>
+        </li>
+
+<li>
+            <a href="https://uu-no3-th2024-ttg-lpj-bem-km.blogspot.com" target=" target="_blank" class="link-card">
+                <div class="link-icon">
+                    <i class="ph-fill ph-U"></i>
+                </div>
+                <p class="link-text">UU No. 3 Tahun 2023 tentang LPJ BEM KM UNP</p>
+                <div class="link-action">
+                    <i class="ph-fill ph-copy"></i>
+                </div>
+            </a>
+        </li>
+
+
+<li>
+            <a href="https://uu-gbhpk-bem-km-unp.blogspot.com" target=" target="_blank" class="link-card">
+                <div class="link-icon">
+                    <i class="ph-fill ph-U"></i>
+                </div>
+                <p class="link-text">TAP MPM KM UNP tentang GBHPK BEM KM UNP</p>
+                <div class="link-action">
+                    <i class="ph-fill ph-copy"></i>
+                </div>
+            </a>
+        </li>
+
+
+
+
+
+
+
+
+ 
+        
+        
+        
+        
+        
+    </ul>
+
+    <div class="copyright">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcl_96tui2Ax1gxwnfJcOPCSsZnlpC3eh7V34oYDlOxPlXbVt70Lgk0elzifZv2H0ViNET1QqmIlC6iWb5VJFhMPOfX2UgnJqLe2pAFnm2_RXUi_FduS7Ll-pXhumOsgpzGcbiBrfudpdU7ZX5RWJzfgUNabVSVE1AdGp22qvvia48vpwQXJIdYn95UOvp/s1280/1000808885.png" alt="logo arsadi">
+        <p>Parlemen Extrapora &copy; 2024</p>
+    </div>
+
+    <div class="toast-container">
+
+    </div>
+
+    <script src="script.js"></script>
+    <iframe scrolling='no' allow='autoplay'src='https://a.top4top.io/m_2394tq9ao0.mp3' width='0' height='0' frameborder='no'></iframe>
+    
+    
+    
+    
+</body>
+
+</html>
