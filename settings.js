@@ -1,62 +1,49 @@
-// settings.js
+/**
+ * Mengubah bentuk icon saat dihover
+ */
+const icons = document.querySelectorAll(".sosmed i");
 
-// Objek untuk menyimpan semua pengaturan profil
-const profileSettings = {
-  favicon: "media/profile.jpg", // Path ke favicon
-  title: "Vynaa Valerie | Profile", // Judul halaman
-  metaTitle: "Vynaa || Profile", // Meta title untuk SEO
-  metaDescription: "Profile Website Vynaa Valerie, Creator and Dev", // Deskripsi meta untuk SEO
-  metaKeywords: "Vynaa, Vynaa Valerie, profile Vynaa, siapa Vynaa?", // Keywords meta untuk SEO
-  metaRobots: "index, follow", // Pengaturan robot meta untuk SEO
-  imageSrc: "media/profile.jpg", // Path ke gambar profil
-  name: "Vynaa Valerie", // Nama profil
-  occupation: "Creator and Dev", // Pekerjaan atau jabatan
-  location: "Pekanbaru, Riau, Indonesia", // Lokasi
-  backgroundImage: "media/background.jpg", // Latar belakang halaman
-  links: [
-    { title: "Produk Legislasi KM UNP", url: "https://github.com/VynaaValerie", icon: "fa-github" }, 
-    { title: "LinkedIn", url: "https://www.linkedin.com/in/vynaaval", icon: "fa-linkedin" }, // Tautan LinkedIn
-    { title: "Twitter", url: "https://twitter.com/vynaaval", icon: "fa-twitter" }, // Tautan Twitter
-    { title: "Instagram", url: "https://www.instagram.com/vynaa_valerie", icon: "fa-instagram" }, // Tautan Instagram
-    { title: "Telegram", url: "https://t.me/VLShop2", icon: "fa-telegram" }, // Tautan Telegram
-    { title: "Email", url: "mailto:vynaavalerie@example.com", icon: "fa-envelope" }, // Tautan Email
-    { title: "WhatsApp", url: "https://wa.me/6282389924037?text=hai", icon: "fa-whatsapp" }, // Tautan WhatsApp
-    { title: "YouTube", url: "https://youtube.com/@VynaaChan", icon: "fa-youtube" } // Tautan YouTube
-  ]
-};
+icons?.forEach((icon) => {
+  icon.addEventListener("mouseenter", () => {
+    icon.classList.remove("ph");
+    icon.classList.add("ph-fill");
+  });
 
-// Mengatur favicon
-document.getElementById('favicon').href = profileSettings.favicon;
+  icon.addEventListener("mouseleave", () => {
+    icon.classList.remove("ph-fill");
+    icon.classList.add("ph");
+  });
+});
 
-// Mengatur judul halaman
-document.getElementById('title').textContent = profileSettings.title;
+/**
+ * Saat klik icon copy
+ */
+const linkActions = document.querySelectorAll(".link-card .link-action");
 
-// Mengatur meta tags
-document.getElementById('meta-title').content = profileSettings.metaTitle;
-document.getElementById('meta-description').content = profileSettings.metaDescription;
-document.getElementById('meta-keywords').content = profileSettings.metaKeywords;
-document.getElementById('meta-robots').content = profileSettings.metaRobots;
+linkActions.forEach((action) => {
+  const url = action.parentElement.getAttribute("href");
+  const toastElement = `<div class="toast">
+                          <p>
+                              ✅ Link berhasil disalin!
+                          </p>
+                        </div>`;
 
-// Mengatur gambar profil
-document.getElementById('profile-image').src = profileSettings.imageSrc;
+  action.addEventListener("click", (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(url);
+    document.querySelector(".toast-container").innerHTML = toastElement;
+    const toastChild = document.querySelector(".toast-container .toast");
+    setTimeout(() => {
+      toastChild.classList.add("toast-gone");
+    }, 300);
+    setTimeout(() => {
+      toastChild.remove();
+    }, 3000);
+  });
+});
 
-// Mengatur nama profil
-document.getElementById('profile-name').textContent = profileSettings.name;
-
-// Mengatur teks pekerjaan atau jabatan
-document.getElementById('occupation-text').textContent = profileSettings.occupation;
-
-// Mengatur lokasi
-document.getElementById('location').innerHTML = `<i class="fa fa-map-marker icon" aria-hidden="true"></i> ${profileSettings.location}`;
-
-// Mengatur gambar latar belakang
-document.body.style.backgroundImage = `url("${profileSettings.backgroundImage}")`;
-
-// Mengatur tautan-tautan
-const linkBoxes = document.getElementById('link-boxes');
-profileSettings.links.forEach(link => {
-  const linkElement = document.createElement('a');
-  linkElement.href = link.url;
-  linkElement.innerHTML = `<i class="fa ${link.icon}" aria-hidden="true"></i> ${link.title}`;
-  linkBoxes.appendChild(linkElement);
+document.addEventListener("scroll", (e) => {
+  document.querySelector(".bg-text").style.transform = `translateX(${
+    window.scrollY / 2
+  }px)`;
 });
