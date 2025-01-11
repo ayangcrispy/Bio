@@ -198,6 +198,13 @@ a {
 
 
 
+.link-card:focus, .link-card:active {
+    outline: none; /* Menghilangkan garis luar */
+    background-color: transparent; /* Mengatur ulang warna latar belakang */
+}
+
+
+
 
 
 
