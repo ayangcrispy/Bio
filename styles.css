@@ -177,3 +177,28 @@ a {
   -webkit-text-fill-color: transparent;
   z-index: -1;
 }
+
+
+
+
+
+
+
+
+  /* Disable image drag and drop */
+  img {
+    pointer-events: none;
+    user-select: none;
+  }
+  /* Disable text selection */
+  body {
+    user-select: none;
+  }
+
+
+
+
+
+
+
+
